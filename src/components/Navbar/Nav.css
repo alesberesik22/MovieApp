@@ -19,14 +19,49 @@
 
 .nav_logo {
   position: fixed;
+  top: -0.5rem;
   left: 20px;
   width: 80px;
   object-fit: contain;
 }
-
-.nav_avatar {
+.search-box {
   position: fixed;
-  right: 20px;
-  width: 30px;
+  right: 6rem;
+  top: 1rem;
   object-fit: contain;
+  width: 10rem;
+}
+.search-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 2rem;
+  color: white;
+  background: transparent;
+  border: transparent;
+  border-radius: 0.7rem;
+  transition: var(--transition);
+}
+.search-box input:hover {
+  border: 2px solid var(--color-primary);
+}
+.nav-items {
+  margin-left: 8rem;
+}
+.nav-item {
+  float: left;
+  height: 60px;
+  text-decoration: none;
+}
+.nav-links {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin: 0;
+  transition: var(--transition);
+}
+.nav-links:hover {
+  color: var(--color-primary);
+}
+li {
+  list-style-type: none;
 }

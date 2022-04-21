@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import Logo from '../../asserts/logo2.png'
+
 import "./Nav.css";
 
 function Nav() {
@@ -20,14 +24,25 @@ function Nav() {
     <div className={`nav ${show && "nav_black"}`}>
       <img
         className="nav_logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png"
-        alt="Netflix Logo"
+        src={Logo}
+        alt="My Logo"
       />
-      <img
-        className="nav_avatar"
-        src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png"
-        alt="Avatar"
-      />
+      <ul className="nav-items">
+        <li className="nav-item">
+          <Link to="/watched" className="nav-links">
+            Watched
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/watchlist" className="nav-links">
+            Watch list
+          </Link>
+        </li>
+      </ul>
+
+      <div className="search-box">
+        <input type="text" placeholder="What are you looking for ?" />
+      </div>
     </div>
   );
 }
