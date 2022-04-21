@@ -55,11 +55,7 @@ function App() {
               />
             </div>
           </Route>
-          <Route path="/watched">
-            <div className="App">
-              <Watched />
-            </div>
-          </Route>
+          <Route path="/watched" exact component={Watched}/>
           <Route path="/watchlist" exact component={Watchlist} />
         </Switch>
       </Router>

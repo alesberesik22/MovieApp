@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import Logo from '../../asserts/logo2.png'
+import Search from "../Seach/Search";
+
+import Logo from "../../asserts/logo2.png";
 
 import "./Nav.css";
 
@@ -22,11 +24,7 @@ function Nav() {
 
   return (
     <div className={`nav ${show && "nav_black"}`}>
-      <img
-        className="nav_logo"
-        src={Logo}
-        alt="My Logo"
-      />
+      <img className="nav_logo" src={Logo} alt="My Logo" />
       <ul className="nav-items">
         <li className="nav-item">
           <Link to="/watched" className="nav-links">
@@ -39,10 +37,7 @@ function Nav() {
           </Link>
         </li>
       </ul>
-
-      <div className="search-box">
-        <input type="text" placeholder="What are you looking for ?" />
-      </div>
+      <Search />
     </div>
   );
 }

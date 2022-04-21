@@ -15,6 +15,7 @@
 
 .nav_black {
   background-color: #111;
+  border: 2px solid var(--color-primary);
 }
 
 .nav_logo {
@@ -23,26 +24,6 @@
   left: 20px;
   width: 80px;
   object-fit: contain;
-}
-.search-box {
-  position: fixed;
-  right: 6rem;
-  top: 1rem;
-  object-fit: contain;
-  width: 10rem;
-}
-.search-box input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 2rem;
-  color: white;
-  background: transparent;
-  border: transparent;
-  border-radius: 0.7rem;
-  transition: var(--transition);
-}
-.search-box input:hover {
-  border: 2px solid var(--color-primary);
 }
 .nav-items {
   margin-left: 8rem;
