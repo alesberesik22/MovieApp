@@ -21,9 +21,18 @@
 .nav_logo {
   position: fixed;
   top: -0.5rem;
-  left: 20px;
+  right: 2px;
   width: 80px;
   object-fit: contain;
+}
+.nav_logo2 img {
+  padding: 0;
+  position: fixed;
+  top: -0.7rem;
+  left: 20px;
+  width: 7rem;
+  object-fit: contain;
+  transition: var(--transition);
 }
 .nav-items {
   margin-left: 8rem;

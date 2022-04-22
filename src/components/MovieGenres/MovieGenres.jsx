@@ -28,11 +28,11 @@ function MovieGenres({ title, fetchUrl, isLargeRow }) {
   }, [fetchUrl]);
 
   const handleClick = async (movie) => {
-    if (trailerUrl) {
+    if (trailerUrl !== "") {
       setTrailerUrl("");
     } else {
       let trailerurl = await axios.get(
-        `/movie/${movie.id}/videos?api_key=fb34530271b349314af0de263d16ab5a`
+        `/movie/${movie.id}/videos?api_key=ad6aa82bc5885a29cef46d209ca93674`
       );
       console.log(trailerurl.data.results[0].key);
       setTrailerUrl(trailerurl.data.results[0].key);
@@ -59,7 +59,8 @@ function MovieGenres({ title, fetchUrl, isLargeRow }) {
             )
         )}
       </div>
-      {trailerUrl && <Youtube videoId={trailerUrl} opts={opts} />}
+      {/* {trailerUrl && <Youtube videoId={trailerUrl} opts={opts} />}
+      <Youtube videoId="2g811Eo7K8U" opts={opts} /> */}
     </div>
   );
 }
