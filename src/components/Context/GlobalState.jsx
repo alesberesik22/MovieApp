@@ -2,8 +2,8 @@ import React from "react";
 import { createContext, useReducer, useEffect } from "react";
 
 import AppReducer from "./AppReducer";
-import { db } from "../Firebase/firebase-config";
-import { Database } from "firebase/database";
+import startDatabase from "../Firebase/firebase-config";
+import { child, get, ref, remove, set, update } from "firebase/database";
 
 // initial state
 const initialState = {
@@ -19,10 +19,14 @@ export const GlobalProvider = (props) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   useEffect(() => {
-    const watchListRef = firebase.database().ref("watchlist");
+    // const watchListRef = firebase.database().ref("watchlist");
+    const watchListRef = startDatabase();
     const addMovie = JSON.stringify(state.watchlist);
-
-    watchListRef.push(addMovie);
+    if (state.watchlist.length > 0) {
+      set(ref(watchListRef, "watchList/" + state.watchlist.length), {
+        watchlist: addMovie,
+      });
+    }
   }, [state]);
 
   //actions
